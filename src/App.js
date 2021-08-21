@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Cards from "./components/Cards";
+import Jumbotron from "./components/Jumbotron";
 
 function App() {
+
+  let propiedadesNavbar = {
+    titulo: "Start Boostrap",
+    home: "Home",
+    about: "About",
+    services: "Services",
+    contact: "Contact",
+  }
+  let propiedadesfooter = {
+    titulo: "Copyright Your Website 2021",
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar
+        titulo={propiedadesNavbar.titulo}
+        home={propiedadesNavbar.home}
+        about={propiedadesNavbar.about}
+        services={propiedadesNavbar.services}
+        contact={propiedadesNavbar.contact}
+      />
+
+
+      <Jumbotron />
+
+      <div className="container">
+
+        <div className="row d-flex justify-content-center">
+          < Cards />
+          < Cards />
+          < Cards />
+          < Cards />
+        </div>
+
+      </div>
+
+      <Footer
+        titulo={propiedadesfooter.titulo}
+      />
+
+    </>
+
   );
 }
 
